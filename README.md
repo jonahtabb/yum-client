@@ -7,6 +7,6 @@ This app retrieves recipe data from the [Edaman Api](https://www.edamam.com/) an
 
 This app utilizes React, JavaScript, HTML, CSS, and Material-UI
 
-You can view the repository for the server of this app at [https://github.com/jlittle94/yum-server](https://github.com/jlittle94/yum-server)
+You can view the repository for the server of this app at [https://github.com/jonahtabb/yum-server](https://github.com/jonahtabb/yum-server)
 
-The deployed app can be viewed at <a href="http://efa-yumapp.herokuapp.com/" target="_blank">http://efa-yumapp.herokuapp.com/</a>
+The deployed app can be viewed at <a href="https://jtabb-yum-app.herokuapp.com/" target="_blank">https://jtabb-yum-app.herokuapp.com/</a>
