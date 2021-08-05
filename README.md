@@ -1,4 +1,4 @@
-# Poetry App Client
+# Yum Recipe App Client
 This app retrieves recipe data from the [Edaman Api](https://www.edamam.com/) and allows users to save recipes to their personal cookbook.  Features include:
 - Registration / Login
 - Recipe search by one or multiple ingredients
@@ -9,3 +9,4 @@ This app utilizes React, JavaScript, HTML, CSS, and Material-UI
 
 You can view the repository for the server of this app at [https://github.com/jlittle94/yum-server](https://github.com/jlittle94/yum-server)
 
+The deployed app can be viewed at <a href="http://efa-yumapp.herokuapp.com/" target="_blank">http://efa-yumapp.herokuapp.com/</a>
