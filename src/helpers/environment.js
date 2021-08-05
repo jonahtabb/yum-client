@@ -4,8 +4,8 @@ switch (window.location.hostname) {
     case 'localhost' || '127.0.0.1':
     APIURL = 'http://localhost:3000';
     break;
-    case 'efa-yumapp.herokuapp.com':
-    APIURL = 'https://jbl-yum-server.herokuapp.com'
+    case 'jtabb-yum-app.herokuapp.com':
+    APIURL = 'https://jtabb-yum-app-server.herokuapp.com'
 }
 
 export default APIURL;
