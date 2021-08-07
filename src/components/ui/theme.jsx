@@ -8,5 +8,12 @@ export default createTheme({
         secondary: {
             main: '#b65036'
         }
+    },
+    overrides: {
+        MuiOutlinedInput: {
+            notchedOutline:{
+                borderColor: 'hsl(111,11%,75%)'
+            }
+        }
     }
 })
