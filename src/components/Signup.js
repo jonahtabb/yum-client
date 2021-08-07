@@ -1,5 +1,7 @@
 import { useState } from "react";
 import AppLoggedIn from "./AppLoggedIn";
+import { FormControl, TextField, Grid, Button} from '@material-ui/core';
+import { makeStyles } from '@material-ui/core/styles';
 
 const Signup = (props) => {
   const [confirmPassword, setConfirmPassword] = useState();
@@ -36,51 +38,61 @@ const Signup = (props) => {
       {props.loggedIn ? (
         <AppLoggedIn sessionToken={props.sessionToken} />
       ) : (
-        <form >
-          <h1>Sign Up!</h1>
-          <label>Username: </label>
-          <input
-            onChange={(e) => props.setUsername(e.target.value)}
-          ></input>
-          <br />
-          <br />
-          <label>Password: </label>
-          <input
-            type="password"
-            onChange={(e) => props.setPassword(e.target.value)}
-          ></input>
-          <br />
-          <br />
-          <label
-          style={{
-              textAlign: 'left'
-          }}> Confirm: </label>
-          <input 
-            style={{
-               marginLeft: 15,
-            }}
-            type="password"
-            onChange={(e) => setConfirmPassword(e.target.value)}
-          ></input>
-          <br />
-          <button
-            type="button"
-            size="large"
-            style={{
-              backgroundColor: "#476040",
-              color: "#D2DAC3",
-              margin: 10,
-            }}
-            onClick={confirmAndSend}
-          >
-            Sign Up
-          </button>
-          <br />         
-          <a style={{
-                          color: '#b55139',
-                        }}
-        onClick={props.toggle}>Already have an account?</a>
-        </form>
+        <FormControl>
+          <Grid container direction={"column"} spacing={3}>
+            <Grid item>
+              <h1>Sign Up!</h1>
+            </Grid>
+
+            <Grid item>
+              <TextField
+              id="signup-username"
+              label="Username" 
+              variant="outlined"
+              onChange={(e) => props.setUsername(e.target.value)}
+              type= "text"
+              />
+            </Grid>
+
+            <Grid item>
+              <TextField 
+              id="signup-password"
+              label="Password"
+              type="password"
+              variant="outlined"
+              onChange={(e) => props.setPassword(e.target.value)}
+              />
+            </Grid>
+
+            <Grid item>
+              <TextField 
+              id="signup-password-confirm"
+              label="Confirm Password"
+              type="password"
+              variant="outlined"
+              onChange={(e) => setConfirmPassword(e.target.value)}
+              />
+            </Grid>
+            
+            <Grid item>
+              <Button
+                variant="contained"
+                color="primary"
+                onClick={confirmAndSend}
+                >Sign Up</Button>
+            </Grid>
+
+            <Grid item>
+              <Button
+                variant="outlined"
+                color="primary"
+                onClick={props.toggle}
+                >
+                Already have an account?
+              </Button>
+            </Grid>
+          </Grid>
+        </FormControl>
 
       )}{failMessage ? <p>{failMessage}</p> : <></>}
     </>
