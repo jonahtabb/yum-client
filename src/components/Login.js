@@ -1,43 +1,56 @@
 import AppLoggedIn from "./AppLoggedIn";
+import {FormControl, Grid, TextField, Button} from '@material-ui/core';
 
 const Login = (props) => {
+  return (
+    <>
+      {props.loggedIn ? (
+        <AppLoggedIn sessionToken={props.sessionToken} />
+      ) : (
+        <FormControl>
+          <Grid container direction={"column"} spacing={3}>
+            <Grid item>
+              <h1>Login</h1>
+            </Grid>
+            <Grid item>
+                <TextField
+                id="login-username"
+                label="Username" 
+                variant="outlined"
+                onChange={(e) => props.setUsername(e.target.value)}
+                type= "text"
+                />
+            </Grid>
+            <Grid item>
+                <TextField 
+                id="login-password"
+                label="Password"
+                type="password"
+                variant="outlined"
+                onChange={(e) => props.setPassword(e.target.value)}
+                />
+            </Grid>
+            <Grid item>
+                <Button
+                    variant="contained"
+                    color="primary"
+                    onClick={props.loginForm}
+                > Login
+                </Button>
+            </Grid>
+            <Grid item>
+                <Button
+                    variant="outlined"
+                    color="primary"
+                    onClick={props.toggle}
+                > Don't have an account?
+                </Button>
+            </Grid>
+          </Grid>
+        </FormControl>
+      )}
+    </>
+  );
+};
 
-    return (
-        <>
-            {
-            props.loggedIn ? 
-            <AppLoggedIn sessionToken={props.sessionToken} /> :
-                <form>
-                    <h1>Login</h1>
-                    <label>Username: </label>
-                    <input onChange={e => props.setUsername(e.target.value)}></input>
-                    <br />
-                    <br />
-                    <label>Password: </label>
-                    <input type="password" onChange={e => props.setPassword(e.target.value)}></input>
-                    <br />
-                    
-
-                    <button type="button" onClick={props.loginForm} 
-                 
-                  
-                    size="large"
-                    style={{
-                    backgroundColor:"#476040",
-                    color: "#D2DAC3",
-                    margin: 10,}}
-                        >Login</button>
-                    <br />
-                    <a  style={{
-                          color: '#b55139',
-                        }}
-                        onClick={props.toggle}>Don't have an account?</a>
-                   
-                </form>}
-
-        </>
-
-    )
-}
-
-export default Login
+export default Login;

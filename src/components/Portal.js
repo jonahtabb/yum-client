@@ -50,7 +50,7 @@ const Portal = () => {
 
   const signUpForm = (e) => {
     e.preventDefault();
-    fetch(`${APIURL}/user/register`, {
+    fetch(`${APIURL}/user/register/`, {
       method: "POST",
       body: JSON.stringify({
         user: { username: username, password: password },

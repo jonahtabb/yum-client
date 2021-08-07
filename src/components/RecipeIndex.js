@@ -37,13 +37,14 @@ const RecipeIndex = (props) => {
           return a.id - b.id;
         });
         setRecipes(jsonData);
-        //console.log(jsonData);
+        console.log(jsonData);
       })
       .catch((err) => console.log(err));
   };
 
   useEffect(() => {
-    fetchRecipes()
+    setTimeout(fetchRecipes(), 5000)
+    
   }, [renderTrigger, props.newRecipe]);
 
 
